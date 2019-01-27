@@ -1,10 +1,11 @@
 FactoryBot.define do
   factory :content do
-    title { "MyString" }
-    published_date { "2019-01-26 23:54:11" }
-    author { "MyString" }
-    summary { "MyText" }
-    content { "MyText" }
-    status { "MyString" }
+    title { Faker::Book.title }
+    #published_date { Faker::Time.between(DateTime.now - 1, DateTime.now)   }
+    published_date { Time.now + 3 }
+    author { Faker::Book.author }
+    summary { Faker::Book.title }
+    content { Faker::Book.title}
+    status { "published" }
   end
 end
